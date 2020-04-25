@@ -7,6 +7,8 @@ describe('<App />', () => {
     const { getByText, container } = render(<App />);
     const helloElement = getByText(/Hello Marco Moretti/i);
     expect(helloElement).toBeInTheDocument();
-    expect(container.querySelector('.App-header')?.firstChild).toContainElement(helloElement);
-  })
+    expect(container.querySelector('.App-header')?.firstChild).toContainElement(
+      helloElement,
+    );
+  });
 });

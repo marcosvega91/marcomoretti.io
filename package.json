@@ -18,6 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "prettier": "prettier --check src/**/*.{ts,tsx}",
     "test": "react-scripts test"
   },
   "eslintConfig": {
