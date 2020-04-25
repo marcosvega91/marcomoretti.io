@@ -1,12 +1,14 @@
-<p align="center">
+<h1 align="center">
     <a href="https://marcomoretti.dev" target="_blank">marcomoretti.dev </a>
-</p>
-<h2 align="center">
+</h1>
+<h3 align="center">
 My personal portfolio developed with React
-</h2>
+</h3>
 <div align="center">
-    [![Netlify Status](https://api.netlify.com/api/v1/badges/3ed4b76f-3a9b-4805-a337-df8fe84b2100/deploy-status)](https://app.netlify.com/sites/marcomoretti/deploys)
-    ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3ed4b76f-3a9b-4805-a337-df8fe84b2100/deploy-status)](https://app.netlify.com/sites/marcomoretti/deploys)
+![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+
 </div>
 
 
