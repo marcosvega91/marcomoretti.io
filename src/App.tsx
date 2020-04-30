@@ -1,11 +1,14 @@
 import React from 'react';
+import Stepper from './components/stepper/Stepper';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hi, I&apos;m Marco Moretti</h1>
-      </header>
+      <Stepper orientation="horizontal" activeStep={1}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </Stepper>
     </div>
   );
 }
