@@ -1,12 +1,11 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-import Step from '../step';
 
 type Orientation = 'horizontal' | 'vertical';
 
 export interface StepperProps {
   activeStep: number;
-  children: ReactNode[];
+  children: ReactNode;
   orientation?: Orientation;
 }
 
@@ -29,14 +28,17 @@ const Stepper = ({
   activeStep,
   orientation = 'vertical',
 }: StepperProps) => {
-  const steps = children.map((node, index) => {
+  const steps = React.Children.map(children, (child, index) => {
+    const step: any = child;
     const active = index === activeStep;
     const key = `step-${index}`;
-    return (
-      <Step key={key} active={active} index={index}>
-        {node}
-      </Step>
-    );
+    const stepIndex = index + 1;
+    return React.cloneElement(step, {
+      key,
+      active,
+      index: stepIndex,
+      ...step.props,
+    });
   });
   return <StepperContainer orientation={orientation}>{steps}</StepperContainer>;
 };
