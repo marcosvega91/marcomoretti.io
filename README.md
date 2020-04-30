@@ -2,7 +2,7 @@
     <a href="https://marcomoretti.dev" target="_blank">marcomoretti.dev </a>
 </h1>
 <h3 align="center">
-My personal portfolio developed with React
+My personal website developed with React
 </h3>
 <div align="center">
 
