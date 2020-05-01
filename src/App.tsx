@@ -5,6 +5,14 @@ import PageController from './components/PageController';
 import Stepper from './components/Stepper';
 import Step from './components/Step';
 
+const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+`;
+
 const StepperWrapper = styled.div`
   position: absolute;
   bottom: 0px;
@@ -14,7 +22,7 @@ const StepperWrapper = styled.div`
 
 function App() {
   return (
-    <div>
+    <Container>
       <PageController activePage={0}>
         <Page>ciao</Page>
       </PageController>
@@ -25,7 +33,7 @@ function App() {
           <Step>Contact</Step>
         </Stepper>
       </StepperWrapper>
-    </div>
+    </Container>
   );
 }
 
