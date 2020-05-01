@@ -16,7 +16,7 @@ function App() {
       <StepperWrapper>
         <Stepper orientation="horizontal" activeStep={1}>
           <Step>Hello</Step>
-          <Step>Skill</Step>
+          <Step>About me</Step>
           <Step>Contact</Step>
         </Stepper>
       </StepperWrapper>
