@@ -44,14 +44,18 @@ const Stepper = ({
   const steps = childrenArray.map((child, index) => {
     const step: any = child;
     const active = index === activeStep;
-    const key = `step-${index}`;
+    const stepperKey = `step-${index}`;
+    const connectorKey = `connector-${index}`;
+
     const connector =
-      index !== 0 ? <StepConnector orientation={orientation} /> : null;
+      index !== 0 ? (
+        <StepConnector key={connectorKey} orientation={orientation} />
+      ) : null;
 
     return [
       connector,
       React.cloneElement(step, {
-        key,
+        stepperKey,
         onStepSelect,
         active,
         index,
