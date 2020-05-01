@@ -32,7 +32,7 @@ const Stepper = ({
 }: StepperProps) => {
   const childrenArray = React.Children.toArray(children);
   useEffect(() => {
-    if (activeStep > childrenArray.length) {
+    if (activeStep > childrenArray.length - 1) {
       console.error('[Stepper] Active step is not in the range of the array');
     }
   }, [activeStep, childrenArray.length]);

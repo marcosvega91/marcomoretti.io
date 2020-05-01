@@ -10,7 +10,7 @@ const PageController = ({ children, activePage }: PageControllerProps) => {
   const childrenArray = React.Children.toArray(children);
 
   useEffect(() => {
-    if (activePage > childrenArray.length) {
+    if (activePage > childrenArray.length - 1) {
       console.error(
         '[PageController] Active page is not in the range of the array',
       );
