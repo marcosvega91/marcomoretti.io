@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Page from './components/Page';
 import PageController from './components/PageController';
 import Stepper from './components/Stepper';
 import Step from './components/Step';
-import WhoAmI from './components/WhoAmI/WhoAmI';
+import HelloImage from './assets/images/hello_image.jpg';
 
 const Container = styled.div`
   position: absolute;
@@ -25,9 +26,14 @@ function App() {
   return (
     <Container>
       <PageController activePage={activeStep} onPageChange={setActiveStep}>
-        <WhoAmI />
-        <WhoAmI />
-        <WhoAmI />
+        <Page imageSrc={HelloImage}>
+          <h1>
+            Hi, I&apos;m Marco Moretti
+            <br />
+            Web Developer at <a href="www.ictandmore.it">ICTandMore</a>
+          </h1>
+          <h2>Glad to see you here! :D</h2>
+        </Page>
       </PageController>
       <StepperWrapper>
         <Stepper
