@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import StepConnector from '../StepConnector';
 import Orientation from './Orientation';
@@ -28,7 +28,13 @@ const Stepper = ({
   activeStep,
   orientation = 'vertical',
 }: StepperProps) => {
-  const steps = React.Children.map(children, (child, index) => {
+  const childrenArray = React.Children.toArray(children);
+  useEffect(() => {
+    if (activeStep > childrenArray.length) {
+      console.error('[Stepper] Active step is not in the range of the array');
+    }
+  }, [activeStep, childrenArray.length]);
+  const steps = childrenArray.map((child, index) => {
     const step: any = child;
     const active = index === activeStep;
     const key = `step-${index}`;
