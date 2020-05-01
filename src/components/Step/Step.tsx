@@ -1,5 +1,5 @@
 import React, { ReactText } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export interface StepProps {
   index?: number;
@@ -13,11 +13,22 @@ const StepContainer = styled.div`
   align-items: center;
 `;
 
-const StepIndexContainer = styled.div`
+const stepActive = css`
+  background-color: black;
+  color: white;
+`;
+
+const stepInactive = css`
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+`;
+
+const StepIndexContainer = styled.div<{ active: boolean }>`
   width: 24px;
   height: 24px;
   border-radius: 12px;
-  background-color: black;
+  ${({ active }) => (active ? stepActive : stepInactive)});
   line-height: 24px;
   text-align: center;
   color: white;
@@ -27,9 +38,9 @@ const StepLabel = styled.span`
   color: black;
 `;
 
-const Step = ({ index, children }: StepProps) => (
+const Step = ({ index, children, active = false }: StepProps) => (
   <StepContainer>
-    <StepIndexContainer>{index}</StepIndexContainer>
+    <StepIndexContainer active={active}>{index}</StepIndexContainer>
     <StepLabel>{children}</StepLabel>
   </StepContainer>
 );
