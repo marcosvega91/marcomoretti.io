@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PageController from './components/PageController';
 import Stepper from './components/Stepper';
@@ -21,13 +21,14 @@ const StepperWrapper = styled.div`
 `;
 
 function App() {
+  const [activeStep, setActiveStep] = useState(0);
   return (
     <Container>
-      <PageController activePage={0}>
+      <PageController activePage={activeStep}>
         <WhoAmI />
       </PageController>
       <StepperWrapper>
-        <Stepper orientation="horizontal" activeStep={0}>
+        <Stepper orientation="horizontal" activeStep={activeStep}>
           <Step>Hello</Step>
           <Step>About me</Step>
           <Step>Contact</Step>
