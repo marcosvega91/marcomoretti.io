@@ -15,7 +15,7 @@ const PageController = ({ children, activePage }: PageControllerProps) => {
         '[PageController] Active page is not in the range of the array',
       );
     }
-  }, [activePage, childrenArray]);
+  }, [activePage, childrenArray.length]);
 
   return <>{childrenArray}</>;
 };
