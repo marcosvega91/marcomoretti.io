@@ -17,9 +17,10 @@ const StepIndexContainer = styled.div`
   width: 24px;
   height: 24px;
   border-radius: 12px;
-  background-color: aqua;
+  background-color: black;
   line-height: 24px;
   text-align: center;
+  color: white;
 `;
 
 const StepLabel = styled.span`
