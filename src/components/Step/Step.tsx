@@ -31,7 +31,6 @@ const StepIndexContainer = styled.div<{ active: boolean }>`
   ${({ active }) => (active ? stepActive : stepInactive)});
   line-height: 24px;
   text-align: center;
-  color: white;
 `;
 
 const StepLabel = styled.span`
