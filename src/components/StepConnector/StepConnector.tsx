@@ -20,6 +20,8 @@ const StepConnector = styled.div<StepperProps>`
   ${({ orientation }) => (orientation === 'vertical' ? vertical : horizontal)};
   border-color: aqua;
   flex: 1 1 auto;
+  // To center with the circle of the step
+  margin-top: 12px;
 `;
 
 StepConnector.defaultProps = {
