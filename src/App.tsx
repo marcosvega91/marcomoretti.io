@@ -24,7 +24,7 @@ function App() {
   const [activeStep, setActiveStep] = useState(0);
   return (
     <Container>
-      <PageController activePage={activeStep}>
+      <PageController activePage={activeStep} onPageChange={setActiveStep}>
         <WhoAmI />
       </PageController>
       <StepperWrapper>

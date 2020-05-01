@@ -3,6 +3,7 @@ import React, { ReactNode, useEffect } from 'react';
 interface PageControllerProps {
   activePage: number;
   children?: ReactNode;
+  onPageChange?: (currentPage: number) => void;
 }
 
 const PageController = ({ children, activePage }: PageControllerProps) => {
