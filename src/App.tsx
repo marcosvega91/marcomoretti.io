@@ -26,6 +26,8 @@ function App() {
     <Container>
       <PageController activePage={activeStep} onPageChange={setActiveStep}>
         <WhoAmI />
+        <WhoAmI />
+        <WhoAmI />
       </PageController>
       <StepperWrapper>
         <Stepper

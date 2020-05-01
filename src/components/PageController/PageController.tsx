@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode } from 'react';
 
 interface PageControllerProps {
   activePage: number;
@@ -8,16 +8,12 @@ interface PageControllerProps {
 
 const PageController = ({ children, activePage }: PageControllerProps) => {
   const childrenArray = React.Children.toArray(children);
-
-  useEffect(() => {
-    if (activePage > childrenArray.length - 1) {
-      console.error(
-        '[PageController] Active page is not in the range of the array',
-      );
-    }
-  }, [activePage, childrenArray.length]);
-
-  return <>{childrenArray}</>;
+  if (activePage > childrenArray.length - 1) {
+    throw Error(
+      '[PageController] Active page is not in the range of the array',
+    );
+  }
+  return <div>{childrenArray[activePage]}</div>;
 };
 
 export default PageController;

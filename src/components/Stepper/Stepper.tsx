@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useCallback } from 'react';
+import React, { ReactNode, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import StepConnector from '../StepConnector';
 import Orientation from './Orientation';
@@ -31,16 +31,17 @@ const Stepper = ({
   onChangeStep,
 }: StepperProps) => {
   const childrenArray = React.Children.toArray(children);
-  useEffect(() => {
-    if (activeStep > childrenArray.length - 1) {
-      console.error('[Stepper] Active step is not in the range of the array');
-    }
-  }, [activeStep, childrenArray.length]);
-  const onStepSelect = useCallback((index) => {
-    if (onChangeStep) {
-      onChangeStep(index);
-    }
-  }, []);
+  if (activeStep > childrenArray.length - 1) {
+    throw Error('[Stepper] Active step is not in the range of the array');
+  }
+  const onStepSelect = useCallback(
+    (index) => {
+      if (onChangeStep) {
+        onChangeStep(index);
+      }
+    },
+    [onChangeStep],
+  );
   const steps = childrenArray.map((child, index) => {
     const step: any = child;
     const active = index === activeStep;
