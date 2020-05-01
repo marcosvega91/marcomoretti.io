@@ -11,6 +11,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  align-self: center;
 `;
 
 const Image = styled.div`
