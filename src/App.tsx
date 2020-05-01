@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Page from './components/Page';
 import PageController from './components/PageController';
 import Stepper from './components/Stepper';
 import Step from './components/Step';
+import WhoAmI from './components/WhoAmI/WhoAmI';
 
 const Container = styled.div`
   position: absolute;
@@ -24,7 +24,7 @@ function App() {
   return (
     <Container>
       <PageController activePage={0}>
-        <Page>ciao</Page>
+        <WhoAmI />
       </PageController>
       <StepperWrapper>
         <Stepper orientation="horizontal" activeStep={1}>
