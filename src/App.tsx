@@ -1,6 +1,6 @@
 import React from 'react';
-import Stepper from './components/stepper';
-import Step from './components/step';
+import Stepper from './components/Stepper';
+import Step from './components/Step';
 
 function App() {
   return (
