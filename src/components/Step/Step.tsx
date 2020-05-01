@@ -1,10 +1,11 @@
-import React, { ReactText } from 'react';
+import React, { ReactText, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 
 export interface StepProps {
   index?: number;
   active?: boolean;
   children?: ReactText;
+  onStepSelect?: (index: number) => void;
 }
 
 const StepContainer = styled.div`
@@ -37,11 +38,24 @@ const StepLabel = styled.span`
   color: black;
 `;
 
-const Step = ({ index, children, active = false }: StepProps) => (
-  <StepContainer>
-    <StepIndexContainer active={active}>{index}</StepIndexContainer>
-    <StepLabel>{children}</StepLabel>
-  </StepContainer>
-);
+const Step = ({
+  index = 0,
+  children,
+  active = false,
+  onStepSelect,
+}: StepProps) => {
+  const onClick = useCallback(() => {
+    if (onStepSelect && index >= 0) {
+      onStepSelect(index);
+    }
+  }, [onStepSelect, index]);
+  const stepIndex = index + 1;
+  return (
+    <StepContainer onClick={onClick}>
+      <StepIndexContainer active={active}>{stepIndex}</StepIndexContainer>
+      <StepLabel>{children}</StepLabel>
+    </StepContainer>
+  );
+};
 
 export default Step;

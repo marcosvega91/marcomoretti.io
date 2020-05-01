@@ -28,7 +28,11 @@ function App() {
         <WhoAmI />
       </PageController>
       <StepperWrapper>
-        <Stepper orientation="horizontal" activeStep={activeStep}>
+        <Stepper
+          orientation="horizontal"
+          activeStep={activeStep}
+          onChangeStep={setActiveStep}
+        >
           <Step>Hello</Step>
           <Step>About me</Step>
           <Step>Contact</Step>
