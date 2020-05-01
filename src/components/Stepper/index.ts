@@ -1,5 +1,5 @@
 import * as stepper from './Stepper';
 import Stepper from './Stepper';
 
-export { stepper };
+export type StepperProps = stepper.StepperProps;
 export default Stepper;

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-
-type Orientation = 'horizontal' | 'vertical';
+import StepConnector from '../StepConnector';
+import Orientation from './Orientation';
 
 export interface StepperProps {
   activeStep: number;
@@ -33,12 +33,17 @@ const Stepper = ({
     const active = index === activeStep;
     const key = `step-${index}`;
     const stepIndex = index + 1;
-    return React.cloneElement(step, {
-      key,
-      active,
-      index: stepIndex,
-      ...step.props,
-    });
+    const connector =
+      index !== 0 ? <StepConnector orientation={orientation} /> : null;
+    return [
+      connector,
+      React.cloneElement(step, {
+        key,
+        active,
+        index: stepIndex,
+        ...step.props,
+      }),
+    ];
   });
   return <StepperContainer orientation={orientation}>{steps}</StepperContainer>;
 };
