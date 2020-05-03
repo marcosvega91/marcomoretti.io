@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StepConnector /> should be horizontal when orientation="horizontal" 1`] = `
+.c0 {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-color: black;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-top: 12px;
+}
+
+<div
+  class="c0"
+  orientation="horizontal"
+/>
+`;
+
+exports[`<StepConnector /> should be horizontal when orientation="vertical" 1`] = `
+.c0 {
+  border-left-width: 1px;
+  border-left-style: solid;
+  min-height: 24px;
+  border-color: black;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-top: 12px;
+}
+
+<div
+  class="c0"
+  orientation="vertical"
+/>
+`;
+
+exports[`<StepConnector /> should be vertical by default 1`] = `
+.c0 {
+  border-left-width: 1px;
+  border-left-style: solid;
+  min-height: 24px;
+  border-color: black;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-top: 12px;
+}
+
+<div
+  class="c0"
+  orientation="vertical"
+/>
+`;

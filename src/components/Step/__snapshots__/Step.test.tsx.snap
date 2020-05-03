@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Step /> should match snapshot when active = false 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c1 {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  line-height: 24px;
+  text-align: center;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    1
+  </div>
+</div>
+`;
+
+exports[`<Step /> should match snapshot when active = true 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c1 {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+  line-height: 24px;
+  text-align: center;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    1
+  </div>
+</div>
+`;

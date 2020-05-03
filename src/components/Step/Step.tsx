@@ -30,7 +30,7 @@ const StepIndexContainer = styled.div<{ active: boolean }>`
   width: 24px;
   height: 24px;
   border-radius: 12px;
-  ${({ active }) => (active ? stepActive : stepInactive)});
+  ${(props) => (props.active ? stepActive : stepInactive)};
   line-height: 24px;
   text-align: center;
 `;

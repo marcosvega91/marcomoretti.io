@@ -10,17 +10,16 @@ describe('<Step />', () => {
     expect(indexContainer).toHaveTextContent('1');
   });
 
-  it('should show have different backgroundColor depending on active prop', () => {
-    const { container, rerender } = render(<Step />);
+  it('should match snapshot when active = false', () => {
+    const { container } = render(<Step />);
     const step = container.firstChild;
-    const indexContainer = step?.firstChild;
-    expect(indexContainer).toHaveStyle(`
-      backgroundColor: 'white',
-    `);
-    rerender(<Step active />);
-    expect(indexContainer).toHaveStyle(`
-      backgroundColor: 'black',
-    `);
+    expect(step).toMatchSnapshot();
+  });
+
+  it('should match snapshot when active = true', () => {
+    const { container } = render(<Step active />);
+    const step = container.firstChild;
+    expect(step).toMatchSnapshot();
   });
 
   it('should call onStepSelect clicking on the step passing index as param', () => {
@@ -45,5 +44,12 @@ describe('<Step />', () => {
     const { container } = render(<Step />);
     const label = container.querySelectorAll('span');
     expect(label.length).toEqual(0);
+  });
+
+  it('should have mouse pointer', () => {
+    const { container } = render(<Step />);
+    const step = container.firstChild;
+    expect(step).not.toBeNull();
+    expect(step).toHaveStyleRule('cursor', 'pointer');
   });
 });
