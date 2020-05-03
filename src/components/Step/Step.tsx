@@ -39,12 +39,7 @@ const StepLabel = styled.span`
   color: black;
 `;
 
-const Step = ({
-  index = 0,
-  children,
-  active = false,
-  onStepSelect,
-}: StepProps) => {
+const Step = ({ index = 0, children, active = false, onStepSelect }: StepProps) => {
   const onClick = useCallback(() => {
     if (onStepSelect && index >= 0) {
       onStepSelect(index);
@@ -54,7 +49,7 @@ const Step = ({
   return (
     <StepContainer onClick={onClick}>
       <StepIndexContainer active={active}>{stepIndex}</StepIndexContainer>
-      <StepLabel>{children}</StepLabel>
+      {children && <StepLabel>{children}</StepLabel>}
     </StepContainer>
   );
 };
