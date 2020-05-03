@@ -14,7 +14,7 @@
     "jest-styled-components": "^7.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "3.4.0",
     "react-swipeable": "^5.5.1",
     "styled-components": "^5.1.0",
     "typescript": "~3.7.2"
@@ -29,7 +29,7 @@
     "test:check": "cross-env CI=true yarn test",
     "test:ci": "cross-env CI=true yarn test --passWithNoTests",
     "lint-staged": "lint-staged",
-    "coverage": "yarn test:ci -- --coverage --watchAll=false && ./coverage/lcov.info"
+    "coverage": "yarn test:ci -- --coverage --watchAll=false && cat ./coverage/lcov.info"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
