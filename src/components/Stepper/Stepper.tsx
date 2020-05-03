@@ -1,11 +1,11 @@
-import React, { ReactNode, useCallback } from 'react';
+import React, { useCallback, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import StepConnector from '../StepConnector';
 import Orientation from './Orientation';
 
 export interface StepperProps {
-  activeStep: number;
-  children: ReactNode;
+  activeStep?: number;
+  children?: ReactNode;
   orientation?: Orientation;
   onChangeStep?: (currentStep: number) => void;
 }
@@ -26,7 +26,7 @@ const StepperContainer = styled.div<{ orientation: Orientation }>`
 
 const Stepper = ({
   children,
-  activeStep,
+  activeStep = -1,
   orientation = 'vertical',
   onChangeStep,
 }: StepperProps) => {
@@ -49,12 +49,15 @@ const Stepper = ({
     const connectorKey = `connector-${index}`;
 
     const connector =
-      index !== 0 ? <StepConnector key={connectorKey} orientation={orientation} /> : null;
+      index !== 0 ? (
+        <StepConnector className="connector" key={connectorKey} orientation={orientation} />
+      ) : null;
 
     return [
       connector,
       React.cloneElement(step, {
-        stepperKey,
+        key: stepperKey,
+        className: 'step',
         onStepSelect,
         active,
         index,
@@ -62,7 +65,9 @@ const Stepper = ({
       }),
     ];
   });
-  return <StepperContainer orientation={orientation}>{steps}</StepperContainer>;
+  return steps.length > 0 ? (
+    <StepperContainer orientation={orientation}>{steps}</StepperContainer>
+  ) : null;
 };
 
 export default Stepper;

@@ -5,6 +5,7 @@ export interface StepProps {
   index?: number;
   active?: boolean;
   children?: ReactText;
+  className?: string;
   onStepSelect?: (index: number) => void;
 }
 
@@ -39,7 +40,7 @@ const StepLabel = styled.span`
   color: black;
 `;
 
-const Step = ({ index = 0, children, active = false, onStepSelect }: StepProps) => {
+const Step = ({ index = 0, children, active = false, onStepSelect, className }: StepProps) => {
   const onClick = useCallback(() => {
     if (onStepSelect && index >= 0) {
       onStepSelect(index);
@@ -47,7 +48,7 @@ const Step = ({ index = 0, children, active = false, onStepSelect }: StepProps) 
   }, [onStepSelect, index]);
   const stepIndex = index + 1;
   return (
-    <StepContainer onClick={onClick}>
+    <StepContainer onClick={onClick} className={className}>
       <StepIndexContainer active={active}>{stepIndex}</StepIndexContainer>
       {children && <StepLabel>{children}</StepLabel>}
     </StepContainer>
