@@ -32,7 +32,8 @@ function App() {
           <h1>
             Hi, I&apos;m Marco Moretti
             <br />
-            Web Developer at <a href="www.ictandmore.it">ICTandMore</a>
+            Web Developer at
+            <a href="www.ictandmore.it">ICTandMore</a>
           </h1>
           <h2>Glad to see you here! :D</h2>
         </Page>
@@ -58,11 +59,7 @@ function App() {
         </Page>
       </PageController>
       <StepperWrapper>
-        <Stepper
-          orientation="horizontal"
-          activeStep={activeStep}
-          onChangeStep={setActiveStep}
-        >
+        <Stepper orientation="horizontal" activeStep={activeStep} onChangeStep={setActiveStep}>
           <Step>Hello</Step>
           <Step>About me</Step>
           <Step>Contact</Step>

@@ -1,12 +1,13 @@
 {
-  plugins: ["prettier", "react"],
-  extends: ['airbnb-typescript', 'plugin:prettier/recommended'],
-  rules: {
-    'prettier/prettier': 'error'
+  "plugins": ["prettier", "react"],
+  "extends": ["airbnb-typescript", "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-props-no-spreading": "off"
   },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: './',
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./",
   }
 }

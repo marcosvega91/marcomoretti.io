@@ -49,9 +49,7 @@ const Stepper = ({
     const connectorKey = `connector-${index}`;
 
     const connector =
-      index !== 0 ? (
-        <StepConnector key={connectorKey} orientation={orientation} />
-      ) : null;
+      index !== 0 ? <StepConnector key={connectorKey} orientation={orientation} /> : null;
 
     return [
       connector,

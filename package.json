@@ -11,6 +11,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/styled-components": "^5.1.0",
+    "jest-styled-components": "^7.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -22,19 +23,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "prettier": "prettier --check src/**/*.{ts,tsx}",
+    "prettier": "prettier src/**/*.{ts,tsx}",
+    "prettier:check": "prettier --check src/**/*.{ts,tsx}",
     "test": "react-scripts test",
+    "test:check": "cross-env CI=true yarn test",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "yarn lint",
-      "yarn test"
+      "yarn prettier:check"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged"
+      "pre-commit": "yarn test:check && yarn lint-staged"
     }
   },
   "eslintConfig": {
@@ -53,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^7.2.1",
     "eslint-config-prettier": "^6.11.0",
@@ -62,7 +66,6 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.5",
-    "jest-styled-components": "^7.0.2",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5"
   }
