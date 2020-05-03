@@ -13,6 +13,10 @@ const StyledPage = styled.div`
   right: 0;
   bottom: 0;
   display: flex;
+  @media all and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -20,6 +24,9 @@ const TextContainer = styled.div`
   flex-direction: column;
   flex: 1;
   align-self: center;
+  @media all and (max-width: 1000px) {
+    flex: none;
+  }
 `;
 
 const Image = styled.div<{ src: string }>`
