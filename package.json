@@ -27,7 +27,9 @@
     "prettier:check": "prettier --check src/**/*.{ts,tsx}",
     "test": "react-scripts test",
     "test:check": "cross-env CI=true yarn test",
-    "lint-staged": "lint-staged"
+    "test:ci": "cross-env CI=true yarn test --passWithNoTests",
+    "lint-staged": "lint-staged",
+    "coverage": "yarn test:ci -- --coverage --watchAll=false && ./coverage/lcov.info"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
