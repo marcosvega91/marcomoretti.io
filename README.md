@@ -8,6 +8,7 @@ My personal website developed with React
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3ed4b76f-3a9b-4805-a337-df8fe84b2100/deploy-status)](https://app.netlify.com/sites/marcomoretti/deploys)
 ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+[![Coverage Status](https://coveralls.io/repos/github/marcosvega91/marcomoretti.io/badge.svg?branch=develop)](https://coveralls.io/github/marcosvega91/marcomoretti.io?branch=develop)
 
 </div>
 
