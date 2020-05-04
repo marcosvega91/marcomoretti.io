@@ -11,17 +11,17 @@ export interface StepperProps {
 }
 
 const horizontal = css`
-  flexdirection: 'row';
-  alignitems: 'center';
+  flex-direction: row;
+  align-items: center;
 `;
 
 const vertical = css`
-  flexdirection: 'column';
+  flex-direction: column;
 `;
 
 const StepperContainer = styled.div<{ orientation: Orientation }>`
   display: flex;
-  ${({ orientation }) => (orientation === 'vertical' ? vertical : horizontal)});
+  ${({ orientation }) => (orientation === 'vertical' ? vertical : horizontal)};
 `;
 
 const Stepper = ({
