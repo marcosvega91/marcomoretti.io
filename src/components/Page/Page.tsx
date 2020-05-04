@@ -40,12 +40,12 @@ const Image = styled.div<{ src: string }>`
 
 type ComponentProps = PageProps & React.HTMLAttributes<HTMLDivElement>;
 
-const Page = ({ children, imageSrc, ...other }: PageProps) => {
+const Page = ({ children, imageSrc, ...other }: ComponentProps) => {
   const renderPage = children || imageSrc;
   return renderPage ? (
     <StyledPage {...other}>
-      {children && <TextContainer>{children}</TextContainer>}
-      {imageSrc && <Image src={imageSrc} />}
+      {children && <TextContainer className="page-text">{children}</TextContainer>}
+      {imageSrc && <Image src={imageSrc} className="page-image" />}
     </StyledPage>
   ) : null;
 };
