@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 export interface PageProps {
-  children: ReactNode;
-  imageSrc: string;
+  children?: ReactNode;
+  imageSrc?: string;
 }
 
 const StyledPage = styled.div`
@@ -37,10 +37,16 @@ const Image = styled.div<{ src: string }>`
   background-repeat: no-repeat;
   background-image: ${({ src }) => `url(${src})`};
 `;
-const Page = ({ children, imageSrc }: PageProps) => (
-  <StyledPage>
-    <TextContainer>{children}</TextContainer>
-    <Image src={imageSrc} />
-  </StyledPage>
-);
+
+type ComponentProps = PageProps & React.HTMLAttributes<HTMLDivElement>;
+
+const Page = ({ children, imageSrc, ...other }: PageProps) => {
+  const renderPage = children || imageSrc;
+  return renderPage ? (
+    <StyledPage {...other}>
+      {children && <TextContainer>{children}</TextContainer>}
+      {imageSrc && <Image src={imageSrc} />}
+    </StyledPage>
+  ) : null;
+};
 export default Page;
